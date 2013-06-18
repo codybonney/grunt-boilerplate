@@ -1,0 +1,120 @@
+/* html5doctor.com Reset Stylesheet v1.6.1 Last Updated: 2010-09-17 Author: Richard Clark - http://richclarkdesign.com Twitter: @rich_clark */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+  padding: 0;
+}
+
+li:last-child {
+  border-right: 0;
+}
+
+.wrapper {
+  width: 800px;
+  height: 780px;
+  position: relative;
+}
+.wrapper .sidebar-navigation {
+  position: absolute;
+  width: 250px;
+  background: url("http://stage1.curiousmedia.com/rdh/junieb/parents/deploy/assets/images/dashed-line.png") no-repeat right 10px;
+  cursor: default;
+}
+.wrapper .sidebar-navigation .navigation_text {
+  font-family: Tahoma, Helvetica, Arial;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 6px;
+  margin-left: 3px;
+  color: #5e2e91;
+}
+.wrapper .sidebar-navigation .button {
+  font-family: Tahoma, Helvetica, Arial;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  width: 220px;
+  height: 33px;
+  line-height: 33px;
+  background: #31c8de;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 3px solid #c9c9c9;
+  margin: 3px;
+}
+.wrapper .sidebar-navigation .button:hover {
+  background: #1ea9be;
+}
+.wrapper .sidebar-navigation .button.like_us_on_facebook {
+  font-family: Tahoma, Helvetica, Arial;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  width: 220px;
+  height: 33px;
+  line-height: 33px;
+  background: #4e6bb9;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 3px solid #c9c9c9;
+  margin: 3px;
+}
+.wrapper .sidebar-navigation .button.like_us_on_facebook:hover {
+  background: #3c5598;
+}
+.wrapper .pages {
+  position: absolute;
+  left: 280px;
+  width: 520px;
+}
+.wrapper .pages .page {
+  font-family: Tahoma, Helvetica, Arial;
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: none;
+  display: none;
+  color: #838f91;
+}
+.wrapper .pages .page .title {
+  font-weight: bold;
+  color: #5e2e91;
+  font-size: 23px;
+  height: 40px;
+}
+.wrapper .pages .page p {
+  margin-top: 16px;
+  line-height: 24px;
+}

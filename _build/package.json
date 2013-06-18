@@ -1,0 +1,12 @@
+{
+  "name": "New-Project",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-compass": "~0.2.0",
+    "grunt-static-handlebars": "~0.8.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-clean": "~0.4.1"
+  }
+}

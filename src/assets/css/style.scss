@@ -1,0 +1,145 @@
+$media_path: "http://stage1.curiousmedia.com/rdh/junieb/parents/deploy/assets/images/";
+
+$wrapper_width: 800;
+$wrapper_height: 780;
+
+$navigation_width: 250;
+
+$content_width: 520;
+
+@mixin page_text() {
+	font-family: Tahoma, Helvetica, Arial;
+	color: #ffffff;
+	font-weight: normal;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+@mixin navigation_text() {
+	font-family: Tahoma, Helvetica, Arial;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+@mixin navigation_button($background) {
+	@include navigation_text();
+	$height: 33;
+	width: 220px;
+	height: $height + px;
+	line-height: $height + px;
+	background: $background;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	border-bottom: 3px solid #c9c9c9;
+	margin: 3px;
+	&:hover {
+		background: darken($background, 10%);
+	}
+}
+
+@mixin centered($width) {
+	position: absolute;
+	left: 50%;
+	margin-left: -1 * $width/2 + px;
+}
+
+
+@mixin opacity($trans) {
+  filter: alpha(opactiy=($trans * 100));
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
+  -moz-opacity: $trans;
+  -khtml-opacity: $trans;
+  opacity: $trans;
+}
+
+/* html5doctor.com Reset Stylesheet v1.6.1 Last Updated: 2010-09-17 Author: Richard Clark - http://richclarkdesign.com Twitter: @rich_clark */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+li {
+	display:inline-block;
+	padding:0;
+}
+
+li:last-child {
+	border-right:0;
+}
+
+.wrapper {
+	width: $wrapper_width + px;
+	height: $wrapper_height + px;
+	position: relative;
+
+	.sidebar-navigation {
+		position: absolute;
+		width: $navigation_width + px;
+		background: url($media_path + 'dashed-line.png') no-repeat right 10px;
+		cursor: default;
+
+		.navigation_text {
+			@include navigation_text();
+			margin-top: 6px;
+			margin-left: 3px;
+			color: #5e2e91;
+		}
+
+		.button {
+			@include navigation_button(#31c8de);
+
+			&.like_us_on_facebook {
+				@include navigation_button(#4e6bb9);
+			}
+		}
+	}
+
+	.pages {
+		position: absolute;
+		left: 280px;
+		width: $content_width + px;
+
+		.page {
+			@include page_text();
+			display: none;
+			color: #838f91;
+
+			.title {
+				font-weight: bold;
+				color: #5e2e91;
+				font-size: 23px;
+				height: 40px;
+			}
+
+			p {
+				margin-top: 16px;
+				line-height: 24px;
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+.content.home .promo {
+  display: none !important;
+}
+.content.home .info {
+  filter: alpha(opactiy=100) !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)" !important;
+  opacity: 1 !important;
+}
