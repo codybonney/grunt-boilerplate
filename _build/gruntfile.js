@@ -1,9 +1,12 @@
 module.exports = function(grunt) {
 
     var project_settings = {
-        path : 'http://localhost/',
-        media_path : 'http://localhost/assets'
-    };
+        path : 'http://localhost'
+    }; var ps = project_settings;
+
+    ps.media_path = ps.path + '/assets/images';
+    ps.js_path  = ps.path + '/assets/js';
+    ps.css_path = ps.path + '/assets/css';
 
     // Project configuration.
     grunt.initConfig({
