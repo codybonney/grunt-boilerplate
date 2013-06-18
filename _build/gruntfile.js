@@ -1,5 +1,10 @@
 module.exports = function(grunt) {
 
+    var project_settings = {
+        path : 'http://localhost/',
+        media_path : 'http://localhost/assets'
+    };
+
     // Project configuration.
     grunt.initConfig({
 
@@ -33,12 +38,26 @@ module.exports = function(grunt) {
                     '../deploy/index.html' : '../src/pages/index.html'
                 },
                 options: {
-                    replacements: [{
-                        pattern: /<!-- @import (.*?) -->/ig,
-                        replacement: function (match, p1, offset, string) {
-                            return grunt.file.read('../src/' + p1);
+                    replacements: [
+                        {
+                            pattern: /<!-- @import (.*?) -->/ig,
+                            replacement: function (match, p1, offset, string) {
+                                return grunt.file.read('../src/' + p1);
+                            }
+                        },
+                        {
+                            pattern: /<!-- @settings (.*?) -->/ig,
+                            replacement: function (match, p1, offset, string) {
+                                return project_settings[p1];
+                            }
+                        },
+                        {
+                            pattern: /\{\{(.*?)\}\}/ig,
+                            replacement: function (match, p1, offset, string) {
+                                return project_settings[p1];
+                            }
                         }
-                    }]
+                    ]
                 }
             }
         },
