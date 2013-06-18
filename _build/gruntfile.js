@@ -46,6 +46,13 @@ module.exports = function(grunt) {
                             }
                         },
                         {
+                            pattern: /<!-- @import (.*?) -->/ig,
+                            replacement: function (match, p1, offset, string) {
+                                return grunt.file.read('../src/' + p1);
+                            }
+                        },
+
+                        {
                             pattern: /<!-- @settings (.*?) -->/ig,
                             replacement: function (match, p1, offset, string) {
                                 return project_settings[p1];
