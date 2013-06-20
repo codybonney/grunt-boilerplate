@@ -1,12 +1,3 @@
-$media_path: "http://stage1.curiousmedia.com/rdh/junieb/parents/deploy/assets/images/";
-
-$wrapper_width: 800;
-$wrapper_height: 780;
-
-$navigation_width: 250;
-
-$content_width: 520;
-
 @mixin page_text() {
 	font-family: Tahoma, Helvetica, Arial;
 	color: #ffffff;
@@ -90,56 +81,4 @@ li {
 
 li:last-child {
 	border-right:0;
-}
-
-.wrapper {
-	width: $wrapper_width + px;
-	height: $wrapper_height + px;
-	position: relative;
-
-	.sidebar-navigation {
-		position: absolute;
-		width: $navigation_width + px;
-		background: url($media_path + 'dashed-line.png') no-repeat right 10px;
-		cursor: default;
-
-		.navigation_text {
-			@include navigation_text();
-			margin-top: 6px;
-			margin-left: 3px;
-			color: #5e2e91;
-		}
-
-		.button {
-			@include navigation_button(#31c8de);
-
-			&.like_us_on_facebook {
-				@include navigation_button(#4e6bb9);
-			}
-		}
-	}
-
-	.pages {
-		position: absolute;
-		left: 280px;
-		width: $content_width + px;
-
-		.page {
-			@include page_text();
-			display: none;
-			color: #838f91;
-
-			.title {
-				font-weight: bold;
-				color: #5e2e91;
-				font-size: 23px;
-				height: 40px;
-			}
-
-			p {
-				margin-top: 16px;
-				line-height: 24px;
-			}
-		}
-	}
 }
