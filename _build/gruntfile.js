@@ -49,12 +49,29 @@ module.exports = function(grunt) {
                             }
                         },
                         {
-                            pattern: /<!-- @import (.*?) -->/ig,
+                            pattern: /<!-- @script (.*?) -->/ig,
                             replacement: function (match, p1, offset, string) {
-                                return grunt.file.read('../src/' + p1);
+                                return "\n<script>\n" + grunt.file.read('../src/' + p1) + "\n</script>";
                             }
                         },
-
+                        {
+                            pattern: /<!-- @style (.*?) -->/ig,
+                            replacement: function (match, p1, offset, string) {
+                                return "\n<style>\n" + grunt.file.read('../deploy/' + p1) + "</style>";
+                            }
+                        },
+                        {
+                            pattern: /<!-- @style-ltie9 (.*?) -->/ig,
+                            replacement: function (match, p1, offset, string) {
+                                return "<!--[if lt IE 9]>\n<style>\n" + grunt.file.read('../deploy/' + p1) + "</style>\n<![endif]-->";
+                            }
+                        },
+                        {
+                            pattern: /<!-- @style-ltie8 (.*?) -->/ig,
+                            replacement: function (match, p1, offset, string) {
+                                return "<!--[if lt IE 8]>\n<style>\n" + grunt.file.read('../deploy/' + p1) + "</style>\n<![endif]-->";
+                            }
+                        },
                         {
                             pattern: /<!-- @settings (.*?) -->/ig,
                             replacement: function (match, p1, offset, string) {
