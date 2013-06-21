@@ -36,9 +36,9 @@ module.exports = function(grunt) {
         },
 
         'string-replace': {
-            kit: {
+            html: {
                 files: {
-                    '../deploy/index.html' : '../src/pages/index.html'
+                    '../deploy/index.html' : '../src/pages/index.html',
                 },
                 options: {
                     replacements: [
@@ -51,10 +51,15 @@ module.exports = function(grunt) {
                         {
                             pattern: /<!-- @script (.*?) -->/ig,
                             replacement: function (match, p1, offset, string) {
-                                return "\n<script>\n" + grunt.file.read('../src/' + p1) + "\n</script>";
+                                return "<script src=\"" + project_settings.js_path + "/" + p1 + "\"></script>";
                             }
                         },
                         {
+                            pattern: /<!-- @inline-script (.*?) -->/ig,
+                            replacement: function (match, p1, offset, string) {
+                                return "\n<script>\n" + grunt.file.read('../src/' + p1) + "\n</script>";
+                            }
+                        }, {
                             pattern: /<!-- @style (.*?) -->/ig,
                             replacement: function (match, p1, offset, string) {
                                 return "\n<style>\n" + grunt.file.read('../deploy/' + p1) + "</style>";
@@ -78,6 +83,21 @@ module.exports = function(grunt) {
                                 return project_settings[p1];
                             }
                         },
+                        {
+                            pattern: /\<\<(.*?)\>\>/ig,
+                            replacement: function (match, p1, offset, string) {
+                                return project_settings[p1];
+                            }
+                        }
+                    ]
+                }
+            },
+            css: {
+                files: {
+                    '../deploy/assets/css/style.css' : '../deploy/assets/css/style.css'
+                },
+                options: {
+                    replacements: [
                         {
                             pattern: /\{\{(.*?)\}\}/ig,
                             replacement: function (match, p1, offset, string) {
